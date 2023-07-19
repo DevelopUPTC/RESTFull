@@ -15,7 +15,7 @@ module.exports = {
     findById : async( req,res)=>{
         const {id} = req.params   
         try {
-            const author = await Author.findById(id)
+            const author = await Author.findById(id).populate('songs')
             
             return res.status(200).json({"state":true,"data":author})
         } catch (error) {

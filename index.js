@@ -10,4 +10,6 @@ app.use(express.json())
 
 app.use('/authors', require('./routes/authors'))
 
+app.use('/songs', require('./routes/songs'))
+
 app.listen(app.get('PORT'),()=>console.log(`Server Listen to Port ${app.get('PORT')}`))
